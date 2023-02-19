@@ -1,5 +1,7 @@
 # Seattle Crime Statistics Dashboard
 
+<img src="img/prototype.jpg" alt="Map prototype" width="900px"/>
+
 ## 1. Project idea
 ## 2. Project significance and broader impacts
 ## 3. Primary functions and major data sources
