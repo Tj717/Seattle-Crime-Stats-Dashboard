@@ -12,7 +12,7 @@
 - How to arrange all the components on the graphical user interface (GUI)?
     - Interactive components include: 
       1. a dropdown menu for selecting the year,
-      2. a toggle menu for selecting the crime type,
+      2. a multiple-choice field for selecting the crime type,
       3. an option to income a map of median income by neighborhood at the corner,
       4. a treemap and a statistics table for a summary of crimes on the map.
     - Visualization components in the right-side panel.
