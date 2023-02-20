@@ -1,5 +1,6 @@
 # Seattle Crime Statistics Dashboard
 
+for reference:
 <img src="img/prototype.jpg" alt="Map prototype" width="900px"/>
 
 ## 1. Project idea
