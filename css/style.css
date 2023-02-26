@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#sidepanel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25%;
+    margin-left: 75%;
+    background-color: rgb(162, 240, 179);
+    overflow: auto;
+}
+
+#container2 {
+    position: absolute;
+    height: 3%;
+    width: 100%;
+    background-color: rgb(209, 209, 249);
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    outline: auto;
+}
+
+label {
+    margin-right: 5%;
+    font-size: 25px;
+}
+
+#year {
+    font-size: 20px;
+    width: 30%;
+}

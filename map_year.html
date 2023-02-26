@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Seattle Crime Statistics</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- <nav id="menu"></nav> -->
+    <div id='map'></div>
+    <div id="sidepanel">
+        <div id="container2">
+            <label for="year">Choose a year:</label>
+                <select name="year" id="year">
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+        </div>
+    </div>
+    <div id="container1">
+        <p id="title">City of Seattle Crime Statistics</p>
+    </div>
+    <div id="disclaimer">
+        <p>Disclaimer</p>
+    </div>
+
+    <script src="js/map_year.js"></script>
+</body>
+</html>
