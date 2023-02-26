@@ -40,3 +40,7 @@ label {
     font-size: 20px;
     width: 30%;
 }
+
+option {
+    text-align: center;
+}
