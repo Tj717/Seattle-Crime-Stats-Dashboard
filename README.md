@@ -9,6 +9,9 @@ for reference:
 ## 4. Targeted audience
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
 ![](img/treemap_example.png)
+
+Treemap example of what we'll have on the sidebar of the dashboard. As years change. the treemap will change as well and show the frequencies of crime categories by year to display any sort of change the frequencies of these crimes might go through.
+
 ## 6. Project format
 - Smart dashboard
 - How to arrange all the components on the graphical user interface (GUI)?
