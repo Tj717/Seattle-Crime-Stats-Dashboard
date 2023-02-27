@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <title>Interactive Web Mapping</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+    <style>
+        h2,
+        h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        /**
+        * Create a position for the map
+        * on the page */
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /**
+        * Set rules for how the map overlays
+        * (information box and legend) will be displayed
+         on the page. */
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(0, 0, 0, 0.2);
+            margin-left: 20px;
+            font-family: Arial, sans-serif;
+            overflow: auto;
+            border-radius: 3px;
+        }
+
+        #features {
+            top: 0;
+            height: 100px;
+            margin-top: 20px;
+            width: 250px;
+        }
+
+        #legend {
+            padding: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            line-height: 18px;
+            height: 210px;
+            margin-bottom: 40px;
+            width: 150px;
+        }
+
+        .legend-key {
+            display: inline-block;
+            border-radius: 20%;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+
+        .mapboxgl-canvas-container.mapboxgl-interactive,
+        .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass {
+            cursor: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class='map-overlay' id='features'>
+        <h2>Seattle Crime</h2>
+        <div id='text-description'>
+            <!-- <p>Hover over a state!</p> -->
+        </div>
+    </div>
+    <div class='map-overlay' id='legend'></div>
+    <script>
+        // initialize basemmap
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoiZWRkaWtpbSIsImEiOiJjbGVodGJ3OTIwdTFhM3BwY3I1N3E0eDNmIn0.g94DU3V68JJWZctCiZQ8hw';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/light-v10', // style URL
+            zoom: 3, // starting zoom
+            center: [-100, 40] // starting center
+        });
+
+        // load data and add as layer
+        async function geojsonFetch() {
+            let response = await fetch('assets/SEI.geojson');
+            let seattlePoverty_data = await response.json();
+
+            map.on('load', function loadingData() {
+                map.addSource('POP_UNDER200PCT_POVERTY', {
+                    type: 'geojson',
+                    data: seattlePoverty_data
+                });
+
+                map.addLayer({
+                    'id': 'seattlePoverty_layer',
+                    'type': 'fill',
+                    'source': 'seattlePoverty',
+                    'paint': {
+                        'fill-color': [
+                            'step',
+                            ['get', 'rates'],
+                            '#FFEDA0',   // stop_output_0
+                            100,          // stop_input_0
+                            '#FED976',   // stop_output_1
+                            300,          // stop_input_1
+                            '#FEB24C',   // stop_output_2
+                            500,          // stop_input_2
+                            '#FD8D3C',   // stop_output_3
+                            750,         // stop_input_3
+                            '#FC4E2A',   // stop_output_4
+                            1000,         // stop_input_4
+                            '#E31A1C',   // stop_output_5
+                            2000,         // stop_input_5
+                            '#BD0026',   // stop_output_6
+                            3000,        // stop_input_6
+                            "#800026"    // stop_output_7
+                        ],
+                        'fill-outline-color': '#BBBBBB',
+                        'fill-opacity': 0.7,
+                    }
+                });
+
+                const layers = [
+                    '0-99',
+                    '100-299',
+                    '300-499',
+                    '500-649',
+                    '750-999',
+                    '1000-1999',
+                    '2000-2999',
+                    '3000 and more'
+                ];
+                const colors = [
+                    '#FFEDA070',
+                    '#FED97670',
+                    '#FEB24C70',
+                    '#FD8D3C70',
+                    '#FC4E2A70',
+                    '#E31A1C70',
+                    '#BD002670',
+                    '#80002670'
+                ];
+
+                // create legend
+                const legend = document.getElementById('legend');
+                legend.innerHTML = "<b>Poverty Level<br>(people/sq.mi.)</b><br><br>";
+
+
+                layers.forEach((layer, i) => {
+                    const color = colors[i];
+                    const item = document.createElement('div');
+                    const key = document.createElement('span');
+                    key.className = 'legend-key';
+                    key.style.backgroundColor = color;
+
+                    const value = document.createElement('span');
+                    value.innerHTML = `${layer}`;
+                    item.appendChild(key);
+                    item.appendChild(value);
+                    legend.appendChild(item);
+                });
+            });
+
+            map.on('mousemove', ({point}) => {
+                const state = map.queryRenderedFeatures(point, {
+                    layers: ['countPoverty_layer']
+                });
+                document.getElementById('text-description').innerHTML = census.length ?
+                    `<h3> ${census[0].properties.Longitude}</h3><p><strong><em>${state[0].properties.Latitude}</strong> people per square mile</em></p>` :
+                    `<p>Hover over an area!</p>`;
+            });
+        }
+
+        geojsonFetch();
+    </script>
+
+</body>
+
+</html>
