@@ -8,6 +8,7 @@ for reference:
 ## 3. Primary functions and major data sources
 ## 4. Targeted audience
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
+![](imgs/treemap_example.png)
 ## 6. Project format
 - Smart dashboard
 - How to arrange all the components on the graphical user interface (GUI)?
