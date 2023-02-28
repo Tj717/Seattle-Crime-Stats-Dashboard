@@ -8,6 +8,9 @@ for reference:
 ## 3. Primary functions and major data sources
 ## 4. Targeted audience
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
+ - Heat map of crime records filtered by year
+![](img/year_map.png)
+
 ![](img/treemap_example.png)
 
 Treemap example of what we'll have on the sidebar of the dashboard. As years change. the treemap will change as well and show the frequencies of crime categories by year to display any sort of change the frequencies of these crimes might go through.
