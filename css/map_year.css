@@ -25,7 +25,7 @@ body {
     position: absolute;
     margin-left: 3px;
     height: 5%;
-    width: 283px;
+    width: 280px;
     margin-top: 3px;
     background-color: rgb(209, 209, 249);
     display: flex;
@@ -35,10 +35,10 @@ body {
 }
 
 #container3 {
-    margin-top: 25%;
+    margin-top: 29.5%;
     margin-left: 3px;
     height: 8%;
-    width: 283px;
+    width: 280px;
     background-color: rgb(174, 213, 243);
     display: flex;
     align-items: center;
