@@ -199,3 +199,4 @@ function addLayerPoint(year) {
 // 3. Add Crime Stats
         // queryRenderedFeatures()
         // Or total records in the geojson
+// 4. Add a Title
