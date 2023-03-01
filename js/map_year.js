@@ -34,19 +34,19 @@ year_menu.addEventListener('change', function() {
         // .then(() => {console.log("added heat")})
         .then(() => {addLayerPoint(year)})
         // .then(() => {console.log("added point")})
-        .then(() => {map.setLayoutProperty(`crime${year}-heat`, 'visibility', 'visible')})
-        .then(() => {map.setLayoutProperty(`crime${year}-point`, 'visibility', 'visible')})
+        // .then(() => {map.setLayoutProperty(`crime${year}-heat`, 'visibility', 'visible')})
+        // .then(() => {map.setLayoutProperty(`crime${year}-point`, 'visibility', 'visible')})
     }
 });
 
 async function addData(year) {
     let response = await fetch(`assets/crimes_by_year/${year}.geojson`);
     let crime = await response.json();
-    let data = map.addSource(`crime${year}`, {
+    // let data = map.addSource(`crime${year}`, {
+    map.addSource(`crime${year}`, {
         type: 'geojson',
         data: crime
     });
-    return data;
 }
 
 function addLayerHeat(year) {
@@ -56,7 +56,7 @@ function addLayerHeat(year) {
         'id': `crime${year}-heat`,
         'type': 'heatmap',
         'source': 'crime2018',
-        'layout': {'visibility': 'none'},
+        'layout': {'visibility': 'visible'},
         'maxzoom': 15,
         'paint': {
             // increase weight as diameter breast height increases
@@ -118,7 +118,7 @@ function addLayerPoint(year) {
         'id': `crime${year}-point`,
         'type': 'circle',
         'source': crime2018,
-        'layout': {'visibility': 'none'},
+        'layout': {'visibility': 'visible'},
         'minzoom': 14,
         'paint': {
             // increase the radius of the circle as the zoom level and dbh value increases
@@ -906,4 +906,4 @@ async function geojsonFetch() {
 };
 
 // hideLayers();
-geojsonFetch();
+// geojsonFetch();
