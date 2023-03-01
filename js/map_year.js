@@ -8,10 +8,12 @@ const map = new mapboxgl.Map({
     zoom: 10.2,
     scrollZoom: true,
 });
+
+let year;
 let prev_year = 0;
+
 const year_menu = document.getElementById('dropdown');
 // year_menu.selectedIndex = -1;
-let year;
 year_menu.addEventListener('change', function() {
     // let year = parseInt(year_menu.value);
     year = parseInt(year_menu.value);
@@ -189,3 +191,11 @@ function addLayerPoint(year) {
         'waterway-label'
     );
 }
+
+// TODO:
+// 1. Add a Income Map
+        // Use flyto when map is selected
+// 2. Add treemap
+// 3. Add Crime Stats
+        // queryRenderedFeatures()
+        // Or total records in the geojson
