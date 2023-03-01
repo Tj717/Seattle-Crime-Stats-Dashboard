@@ -26,13 +26,21 @@
                     <option value=2023>2023</option>
                 </select>
         </div>
-        <div id="container3">
+        <!-- <div id="container3">
             <div id="containerTexts">Crime Against: </div>
             <div>
                 <input type="radio" name="choice" value=0 checked>Society<br>
                 <input type="radio" name="choice" value=1>Property<br>
                 <input type="radio" name="choice" value=2>Individual
             </div>
+        </div> -->
+        <div id="container3">
+            <p id="containerTexts">Crime Against: </p>
+            <form id="crimeAgainst">
+                <label class="type"><input type="radio" value="SOCIETY" name="question">Society</label>
+                <label class="type"><input type="radio" value="PROPERTY" name="question">Property</label>
+                <label class="type"><input type="radio" value="PERSON" name="question">Person</label>
+            </form>
         </div>
     </div>
     <div id="container1">

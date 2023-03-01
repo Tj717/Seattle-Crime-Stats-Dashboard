@@ -15,17 +15,17 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 360px;
-    margin-left: 75%;
+    width: 350px;
+    margin-left: 76%;
     background-color: rgb(162, 240, 179);
     overflow: auto;
 }
 
 #container2 {
     position: absolute;
-    margin-left: 6px;
-    height: 3%;
-    width: 290px;
+    margin-left: 3px;
+    height: 5%;
+    width: 283px;
     margin-top: 3px;
     background-color: rgb(209, 209, 249);
     display: flex;
@@ -36,9 +36,9 @@ body {
 
 #container3 {
     margin-top: 25%;
-    margin-left: 6px;
-    height: 5%;
-    width: 290px;
+    margin-left: 3px;
+    height: 8%;
+    width: 283px;
     background-color: rgb(174, 213, 243);
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@ body {
 
 input[type="radio"] {
     margin-top: -1px;
-    margin-left: 40px;
+    /* margin-left: 40px; */
     vertical-align: middle;
 }
 
@@ -58,15 +58,11 @@ input[type="radio"] {
 
 label {
     margin-right: 5%;
-    font-size: 25px;
+    font-size: 18px;
 }
 
-#year {
-    font-size: 20px;
-    width: 30%;
-}
-
-option {
+select {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    width: 40%;
 }
