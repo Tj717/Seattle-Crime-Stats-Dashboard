@@ -19,13 +19,12 @@ year_menu.addEventListener('change', function() {
         if (prev_year > 2017) {
             // map.setLayoutProperty(`crime${prev_year}`, 'visibility', 'none');
             // map.setLayoutProperty(`crime${prev_year}-heat`, 'visibility', 'none');
-            map.removeSource(`crime${prev_year}`);
             map.removeLayer(`crime${prev_year}-heat`);
             map.removeLayer(`crime${prev_year}-point`);
-            prev_year = year;
+            map.removeSource(`crime${prev_year}`);
             // geojsonSource.setData(`assets/crime_by_year/${year}.geojson`);
         }
-
+        prev_year = year;
         // map.setLayoutProperty('crime2018-heat', 'visibility', 'visible');
 
         addData(year)
@@ -55,7 +54,7 @@ function addLayerHeat(year) {
         {
         'id': `crime${year}-heat`,
         'type': 'heatmap',
-        'source': 'crime2018',
+        'source': `crime${year}`,
         'layout': {'visibility': 'visible'},
         'maxzoom': 15,
         'paint': {
@@ -117,7 +116,7 @@ function addLayerPoint(year) {
         {
         'id': `crime${year}-point`,
         'type': 'circle',
-        'source': crime2018,
+        'source': `crime${year}`,
         'layout': {'visibility': 'visible'},
         'minzoom': 14,
         'paint': {
