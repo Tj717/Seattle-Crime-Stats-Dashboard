@@ -15,7 +15,7 @@
     <div id="map"></div>
     <div id="sidepanel">
         <div id="container2">
-            <label for="year">Choose a year:</label>
+            <label for="year" id="containerTexts">Choose a Year:</label>
                 <select name="year" id="dropdown">
                     <option value=0>-----</option>
                     <option value=2018>2018</option>
@@ -25,6 +25,14 @@
                     <option value=2022>2022</option>
                     <option value=2023>2023</option>
                 </select>
+        </div>
+        <div id="container3">
+            <div id="containerTexts">Crime Against: </div>
+            <div>
+                <input type="radio" name="choice" value=0 checked>Society<br>
+                <input type="radio" name="choice" value=1>Property<br>
+                <input type="radio" name="choice" value=2>Individual
+            </div>
         </div>
     </div>
     <div id="container1">
