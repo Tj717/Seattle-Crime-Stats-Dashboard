@@ -46,14 +46,25 @@ body {
     outline: auto;
 }
 
+#crimeAgainst {
+    width: 40%;
+    margin-left: 5%;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* align-content: stretch; */
+    align-items: flex-start;
+}
+
 input[type="radio"] {
     margin-top: -1px;
-    /* margin-left: 40px; */
     vertical-align: middle;
 }
 
 #containerTexts {
     font-size: 20px;
+    margin-left: 5%;
 }
 
 label {
