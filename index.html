@@ -11,15 +11,54 @@
 </head>
 
 <body>
-    <nav id="menu"></nav>
-    <div id='map'></div>
-    <div id="container">
-        <p id="title">City of Seattle Crime Statistics</p>
+    <div id="map"></div>
+    <div id="container1">
+        <h2 id="titleText"><strong>City of Seattle Crime Statistics</strong></h2>
     </div>
     <div id="disclaimer">
-        <p>Disclaimer</p>
+        <button onclick="on()">Disclaimer</button>
     </div>
+    <div id="overlay" onclick="off()">
+        <div id="text">
+            <p style="color:rgb(255, 136, 0); text-align: center;"><mark>Disclaimer: </mark></p>
+            <p><mark>This project uses data from Seattle Open Data Portal. More text here.</mark></p> 
+            Click Anywhere to Go Back.</div>
+      </div>
+    <script>
+        function on() {document.getElementById("overlay").style.display = "block";}
+        function off() {document.getElementById("overlay").style.display = "none";}
+    </script>
+    <div id="sidepanel">
+        <div id="container2">
+            <label for="year" class="containerTexts">Choose a Year:</label>
+                <select name="year" id="dropdown">
+                    <option value=0>-----</option>
+                    <option value=2018>2018</option>
+                    <option value=2019>2019</option>
+                    <option value=2020>2020</option>
+                    <option value=2021>2021</option>
+                    <option value=2022>2022</option>
+                    <option value=2023>2023</option>
+                </select>
+        </div>
+        <div id="container3">
+            <p class="containerTexts">Crime Against: </p>
+            <form id="crimeAgainst">
+                <label class="type"><input type="radio" value="SOCIETY" name="question">Society</label>
+                <label class="type"><input type="radio" value="PROPERTY" name="question">Property</label>
+                <label class="type"><input type="radio" value="PERSON" name="question">Person</label>
+            </form>
+        </div>
+        <div id="container4">
+            <a class="containerTexts" >Medium Income Map: </a>
+            <a id="income" style="margin-left: 5%;">Off</a>
+        </div>
+        <div id="container5">
+            <a class="containerTexts">Crime Type Treemap: </a>
+        </div>
+        <div id="container6">
+            <a class="containerTexts">Crime Statistics: </a>
+        </div>
     <script src="js/main.js"></script>
 </body>
-
 </html>
