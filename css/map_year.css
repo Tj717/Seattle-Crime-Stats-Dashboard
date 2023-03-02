@@ -15,22 +15,41 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 350px;
-    margin-left: 76%;
+    width: 20.2%;
+    margin-left: 79.8%;
     background-color: rgb(162, 240, 179);
-    overflow: auto;
-}
+    /* overflow: auto; */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    }
 
 #container2 {
     position: absolute;
     margin-left: 3px;
     height: 5%;
-    width: 280px;
+    /* width: 280px; */
+    width: 100%;
     margin-top: 3px;
     background-color: rgb(209, 209, 249);
     display: flex;
     align-items: center;
-    padding: 30px;
+    padding: 10%;
     outline: auto;
 }
 
@@ -38,16 +57,18 @@ body {
     margin-top: 29.5%;
     margin-left: 3px;
     height: 8%;
-    width: 280px;
+    /* width: 280px; */
+    width: 100%;
     background-color: rgb(174, 213, 243);
     display: flex;
     align-items: center;
-    padding: 30px;
+    /* padding: 30px; */
+    padding: 10%;
     outline: auto;
 }
 
 #crimeAgainst {
-    width: 40%;
+    width: 35%;
     margin-left: 5%;
     display: inline-flex;
     flex-direction: column;
@@ -63,17 +84,74 @@ input[type="radio"] {
 }
 
 #containerTexts {
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 1vw;
     margin-left: 5%;
 }
 
 label {
     margin-right: 5%;
-    font-size: 18px;
+    font-size: 1vw;
 }
 
 select {
     text-align: center;
-    font-size: 18px;
+    font-size: 1vw;
     width: 40%;
+}
+
+#container1 {
+    width: 30%;
+    /* height: 30%; */
+    height: 80px;
+    opacity: 95%;
+    background-color: rgba(2, 2, 2, 0.621);
+    margin: 10px;
+    font-size: 1.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(254, 254, 254);
+    flex-direction: column;
+}
+
+#disclaimer {
+    width: 5%;
+    color: white;
+    opacity: 80%;
+    margin-left: 2%;
+    font-size: 0.6vw;
+    /* background-color: brown; */
+    text-align: center;
+}
+
+button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgb(164, 70, 16);
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+#text{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    font-size: 1.5vw;
+    text-align: center;
+    color: rgb(90, 227, 48);
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
 }

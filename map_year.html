@@ -11,8 +11,28 @@
 </head>
 
 <body>
-    <!-- <nav id="menu"></nav> -->
     <div id="map"></div>
+    <div id="container1">
+        <h2 id="titleText"><strong>City of Seattle Crime Statistics</strong></h2>
+    </div>
+    <div id="disclaimer">
+        <button onclick="on()">Disclaimer</button>
+    </div>
+    <div id="overlay" onclick="off()">
+        <div id="text">
+            <p style="color:rgb(255, 136, 0); text-align: center;"><mark>Disclaimer: </mark></p>
+            <p><mark>This project uses data from Seattle Open Data Portal. More text here.</mark></p> 
+            Click anywhere to close the disclaimer.</div>
+      </div>
+    <script>
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+    
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+    </script>
     <div id="sidepanel">
         <div id="container2">
             <label for="year" id="containerTexts">Choose a Year:</label>
@@ -43,13 +63,6 @@
             </form>
         </div>
     </div>
-    <div id="container1">
-        <p id="title">City of Seattle Crime Statistics</p>
-    </div>
-    <div id="disclaimer">
-        <p>Disclaimer</p>
-    </div>
-
     <script src="js/map_year.js"></script>
 </body>
 </html>

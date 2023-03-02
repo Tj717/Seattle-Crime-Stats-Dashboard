@@ -9,6 +9,9 @@ const map = new mapboxgl.Map({
     scrollZoom: true,
 });
 
+const disclaimer = document.getElementById('disclaimer');
+disclaimer.addEventListener('click', function() {});
+
 let year;
 let prev_year = 0;
 
@@ -35,7 +38,7 @@ year_menu.addEventListener('change', function() {
     }
 });
 
-let crimeAgainst = document.getElementById('crimeAgainst');
+const crimeAgainst = document.getElementById('crimeAgainst');
 crimeAgainst.addEventListener("change", function() {
     removeLayer(prev_year);
     addData(year)
