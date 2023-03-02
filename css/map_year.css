@@ -18,7 +18,7 @@ body {
     width: 20.2%;
     margin-left: 79.8%;
     background-color: rgb(162, 240, 179);
-    /* overflow: auto; */
+    overflow: auto;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -40,13 +40,15 @@ body {
     }
 
 #container2 {
-    position: absolute;
     margin-left: 3px;
     height: 5%;
-    /* width: 280px; */
     width: 100%;
+    max-width: 270px;
+    min-height: 2px;
+    max-height: 5px;
+    position: relative;
     margin-top: 3px;
-    background-color: rgb(209, 209, 249);
+    background-color: rgb(182, 182, 254);
     display: flex;
     align-items: center;
     padding: 10%;
@@ -54,15 +56,61 @@ body {
 }
 
 #container3 {
-    margin-top: 29.5%;
     margin-left: 3px;
-    height: 8%;
-    /* width: 280px; */
+    height: 5%;
+    min-height: 5px;
+    max-height: 15px;
+    position: relative;
     width: 100%;
-    background-color: rgb(174, 213, 243);
+    max-width: 270px;
+    background-color: rgb(174, 205, 243);
     display: flex;
     align-items: center;
-    /* padding: 30px; */
+    padding: 10%;
+    outline: auto;
+}
+
+#container4 {
+    margin-left: 3px;
+    height: 3%;
+    min-height: 5px;
+    max-height: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    background-color: rgb(174, 228, 243);
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    outline: auto;
+}
+
+#container5 {
+    margin-left: 3px;
+    height: 55%;
+    min-height: 150px;
+    max-height: 550px;
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    background-color: rgb(174, 243, 230);
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    outline: auto;
+}
+
+#container6 {
+    margin-left: 3px;
+    height: 10%;
+    min-height: 35px;
+    max-height: 55px;
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    background-color: rgb(174, 243, 174);
+    display: flex;
+    align-items: center;
     padding: 10%;
     outline: auto;
 }
@@ -83,11 +131,16 @@ input[type="radio"] {
     vertical-align: middle;
 }
 
-#containerTexts {
-    /* font-size: 20px; */
+.containerTexts {
     font-size: 1vw;
     margin-left: 5%;
 }
+
+@media screen and (min-width: 1200px) {
+    div {
+       font-size: 20px;
+    }
+  }
 
 label {
     margin-right: 5%;
@@ -145,7 +198,7 @@ button {
     cursor: pointer;
   }
   
-#text{
+#text {
     position: absolute;
     top: 50%;
     left: 45%;
@@ -154,4 +207,14 @@ button {
     color: rgb(90, 227, 48);
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+}
+
+#income {
+    background-color: #f55454;
+    color: #ffffff;
+}
+
+#container4 a.active {
+    background-color: #a053ff;
+    color: #ffffff;
 }

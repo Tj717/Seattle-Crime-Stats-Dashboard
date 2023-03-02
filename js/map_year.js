@@ -4,13 +4,35 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-122.222, 47.6026], 
+    center: [-122.222, 47.6], 
     zoom: 10.2,
     scrollZoom: true,
 });
 
-const disclaimer = document.getElementById('disclaimer');
-disclaimer.addEventListener('click', function() {});
+let toggle = false;
+const income = document.getElementById('income');
+const container4 = document.getElementById('container4');
+income.addEventListener('click', function() {
+    if (!toggle) {
+        map.flyTo({
+                center: [-122.05, 47.6],
+                zoom: 10.2,
+                essential: false
+                });
+        toggle = true;
+        income.classList.add('active');
+        income.textContent = 'On';
+    } else {
+        map.flyTo({
+            center: [-122.222, 47.6], 
+            zoom: 10.2,
+            essential: false
+            });
+        toggle = false;
+        income.classList.remove('active');
+        income.textContent = 'Off';
+    }
+});
 
 let year;
 let prev_year = 0;

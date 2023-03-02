@@ -22,20 +22,15 @@
         <div id="text">
             <p style="color:rgb(255, 136, 0); text-align: center;"><mark>Disclaimer: </mark></p>
             <p><mark>This project uses data from Seattle Open Data Portal. More text here.</mark></p> 
-            Click anywhere to close the disclaimer.</div>
+            Click Anywhere to Go Back.</div>
       </div>
     <script>
-    function on() {
-        document.getElementById("overlay").style.display = "block";
-    }
-    
-    function off() {
-        document.getElementById("overlay").style.display = "none";
-    }
+        function on() {document.getElementById("overlay").style.display = "block";}
+        function off() {document.getElementById("overlay").style.display = "none";}
     </script>
     <div id="sidepanel">
         <div id="container2">
-            <label for="year" id="containerTexts">Choose a Year:</label>
+            <label for="year" class="containerTexts">Choose a Year:</label>
                 <select name="year" id="dropdown">
                     <option value=0>-----</option>
                     <option value=2018>2018</option>
@@ -46,23 +41,24 @@
                     <option value=2023>2023</option>
                 </select>
         </div>
-        <!-- <div id="container3">
-            <div id="containerTexts">Crime Against: </div>
-            <div>
-                <input type="radio" name="choice" value=0 checked>Society<br>
-                <input type="radio" name="choice" value=1>Property<br>
-                <input type="radio" name="choice" value=2>Individual
-            </div>
-        </div> -->
         <div id="container3">
-            <p id="containerTexts">Crime Against: </p>
+            <p class="containerTexts">Crime Against: </p>
             <form id="crimeAgainst">
                 <label class="type"><input type="radio" value="SOCIETY" name="question">Society</label>
                 <label class="type"><input type="radio" value="PROPERTY" name="question">Property</label>
                 <label class="type"><input type="radio" value="PERSON" name="question">Person</label>
             </form>
         </div>
-    </div>
+        <div id="container4">
+            <a class="containerTexts" >Medium Income Map: </a>
+            <a id="income" style="margin-left: 5%;">Off</a>
+        </div>
+        <div id="container5">
+            <a class="containerTexts">Crime Type Treemap: </a>
+        </div>
+        <div id="container6">
+            <a class="containerTexts">Crime Statistics: </a>
+        </div>
     <script src="js/map_year.js"></script>
 </body>
 </html>
