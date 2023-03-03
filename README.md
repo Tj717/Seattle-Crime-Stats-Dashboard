@@ -18,7 +18,7 @@
  - Prototype drawing of the dashboard:
 <img src="img/prototype.jpg" alt="Map prototype" width="900px"/>
  - Heat map of crime records filtered by year
-![](img/year_map.png)
+<img src="img/year_map.png"  width="600" height="300">
 
 ![](img/treemap_example.png)
 
