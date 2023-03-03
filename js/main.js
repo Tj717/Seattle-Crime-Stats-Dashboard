@@ -88,13 +88,19 @@ function filterJson (data, keyWord) {
             output['features'].push(data['features'][i])
         }
     }
-    console.log(output);
+    // console.log(output);
     return output
 }
 
 async function addData(year) {
-    let response = await fetch(`assets/crimes_by_year/${year}.geojson`);
+    // Load data from local file
+    // let response = await fetch(`assets/crimes_by_year/${year}.geojson`);
+
+    // Load data from Github repo
+    let url = "https://media.githubusercontent.com/media/Tj717/Seattle-Crime-Stats-Dashboard/main/assets/crimes_by_year/" + year + ".geojson";
+    let response = await fetch(url);
     let crime = await response.json();
+
     if (document.querySelector('input[name="question"]:checked')) {
         crime = filterJson(crime, document.querySelector('input[name="question"]:checked').value);
     }
