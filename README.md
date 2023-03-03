@@ -20,7 +20,7 @@
  - Heat map of crime records filtered by year
 <img src="img/year_map.png"  width="800" height="400">
  - Treemap
-![](img/treemap_example.png)
+<img src="img/treemap_example.png">
 
 Treemap example of what we'll have on the sidebar of the dashboard. As years change. the treemap will change as well and show the frequencies of crime categories by year to display any sort of change the frequencies of these crimes might go through.
 
