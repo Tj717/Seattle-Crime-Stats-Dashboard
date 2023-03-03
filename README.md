@@ -16,10 +16,10 @@
  - policymakers: use this as a reference to identify potential problems and biases in existing policies when it comes to government regulations.
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
  - Prototype drawing of the dashboard:
-<img src="img/prototype.jpg" alt="Map prototype" width="900px"/>
+<img src="img/prototype.jpg" alt="Map prototype" width="800" height="400""/>
  - Heat map of crime records filtered by year
-<img src="img/year_map.png"  width="600" height="300">
-
+<img src="img/year_map.png"  width="800" height="400">
+ - Treemap
 ![](img/treemap_example.png)
 
 Treemap example of what we'll have on the sidebar of the dashboard. As years change. the treemap will change as well and show the frequencies of crime categories by year to display any sort of change the frequencies of these crimes might go through.
