@@ -1,7 +1,6 @@
 # Seattle Crime Statistics Dashboard
 
-for reference:
-<img src="img/prototype.jpg" alt="Map prototype" width="900px"/>
+>[Link](https://tj717.github.io/Seattle-Crime-Stats-Dashboard/) to access the dashboard.
 
 ## 1. Project idea
  - to map and give an overview of crime rates and different types of crime within the city of Seattle. It will provide a comprehensive view of police response coverage and the trend of criminal activities. This project aims to be a one-for-all infographic site that includes different customization options, allowing users to have the most control over seeing what kind of information they need and looking for. 
@@ -16,6 +15,8 @@ for reference:
 
  - policymakers: use this as a reference to identify potential problems and biases in existing policies when it comes to government regulations.
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
+ - Prototype drawing of the dashboard:
+<img src="img/prototype.jpg" alt="Map prototype" width="900px"/>
  - Heat map of crime records filtered by year
 ![](img/year_map.png)
 
