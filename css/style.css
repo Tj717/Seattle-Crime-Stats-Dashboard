@@ -138,15 +138,14 @@ input[type="radio"] {
     margin-left: 5%;
 }
 
-#container5.containerTexts{
+#container5 .containerTexts{
     position: absolute;
 }
 
 #chart_wrapper{
     position: relative;
-    margin-top: 20%;
-    margin-right: auto;
-    margin-left: auto;
+    margin-top: 30%;
+    margin-right: 10%;
 }
 
 @media screen and (min-width: 1200px) {
