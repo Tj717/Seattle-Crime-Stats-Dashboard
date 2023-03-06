@@ -57,10 +57,24 @@ year_menu.addEventListener('change', function() {
         addData(year)
         .then(() => {addLayerHeat(year)})
         .then(() => {addLayerPoint(year)})
-        
+        let pie = document.getElementById('chart_wrapper');
+        let chart = document.querySelector('.plot-container plotly');
+        if(pie.classList.contains('active')) {
+            pie.removeChild(pie.lastChild);
+        }
         addPieChart();
     }
 });
+window.addEventListener('resize', function() {
+    // this.alert("Window resized");
+    let pie = document.getElementById('chart_wrapper');
+    let chart = document.querySelector('.plot-container plotly');
+    if(pie.classList.contains('active')) {
+        pie.removeChild(pie.lastChild);
+    }
+    addPieChart();
+});
+
 
 const crimeAgainst = document.getElementById('crimeAgainst');
 crimeAgainst.addEventListener("change", function() {
@@ -159,19 +173,21 @@ function addPieChart() {
     //     height: 250,
     //     width: 280
     // };
+    var config = {responsive: true};
 
     var layout = {
-        height: 250,
-        width: 280,
-        // autosize: true,
-        margin: {"t": 0, "b": 0, "l": 0, "r": 0},
-        showlegend: false
-    }
+        margin: {"t": 20, "b": 10, "l": 40, "r": 10},
+        showlegend: false,
+        width: window.innerWidth * 0.15,
+        height: window.innerHeight * 0.3,
+        autosize: true
+    };
 
     // console.log("debug:" + year);
     // console.log("debug:" + eval(`data${year}`));
     let pie = document.getElementById('chart_wrapper');
-    Plotly.newPlot(pie, eval(`data${year}`), layout);
+    Plotly.newPlot(pie, eval(`data${year}`), layout, config);
+    pie.classList.add('active');
 }
 
 function addLayerHeat(year) {
