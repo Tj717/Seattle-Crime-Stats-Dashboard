@@ -110,6 +110,68 @@ async function addData(year) {
     });
 }
 
+function addPieChart() {
+    var data2023 = [{
+        values: [7214, 1298, 555],
+        labels: ['Property', 'Person', 'Society'],
+        type: 'pie',
+        textinfo: "label+percent"
+    }];
+      
+    var data2022 = [{
+        values: [54873, 10096, 4196],
+        labels: ['Property', 'Person', 'Society'],
+        type: 'pie',
+        textinfo: "label+percent"
+    }];
+
+    var data2021 = [{
+        values: [53071, 9901, 3380],
+        labels: ['Property', 'Person', 'Society'],
+        type: 'pie',
+        textinfo: "label+percent"
+    }];
+
+    var data2020 = [{
+        values: [57808, 9330, 4638],
+        labels: ['Property', 'Person', 'Society'],
+        type: 'pie',
+        textinfo: "label+percent"
+    }];
+
+    var data2019 = [{
+        values: [49248, 10661, 7573],
+        labels: ['Property', 'Person', 'Society'],
+        type: 'pie',
+        textinfo: "label+percent"
+    }];
+
+    var data2018 = [{
+        values: [52587, 10910, 8949],
+        labels: ['Property', 'Person', 'Society'],
+        type: 'pie',
+        textinfo: "label+percent"
+    }];
+
+    // var layout = {
+    //     height: 250,
+    //     width: 280
+    // };
+
+    var layout = {
+        height: 250,
+        width: 280,
+        // autosize: true,
+        margin: {"t": 0, "b": 0, "l": 0, "r": 0},
+        showlegend: false
+    }
+
+    // console.log("debug:" + year);
+    // console.log("debug:" + eval(`data${year}`));
+    let pie = document.getElementById('chart_wrapper');
+    Plotly.newPlot(pie, eval(`data${year}`), layout);
+}
+
 function addLayerHeat(year) {
     map.addLayer(
         {
@@ -226,7 +288,6 @@ function addLayerPoint(year) {
 // TODO:
 // 1. Add a Income Map
         // Use flyto when map is selected
-// 2. Add treemap
 // 3. Add Crime Stats
         // queryRenderedFeatures()
         // Or total records in the geojson
