@@ -57,6 +57,8 @@ year_menu.addEventListener('change', function() {
         addData(year)
         .then(() => {addLayerHeat(year)})
         .then(() => {addLayerPoint(year)})
+        
+        addPieChart();
     }
 });
 
