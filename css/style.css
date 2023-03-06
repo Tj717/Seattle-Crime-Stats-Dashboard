@@ -95,9 +95,11 @@ body {
     max-width: 270px;
     background-color: rgb(174, 243, 230);
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     padding: 10%;
     outline: auto;
+    align-items: flex-start;
+    justify-content:space-between;
 }
 
 #container6 {
@@ -134,6 +136,17 @@ input[type="radio"] {
 .containerTexts {
     font-size: 1vw;
     margin-left: 5%;
+}
+
+#container5.containerTexts{
+    position: absolute;
+}
+
+#chart_wrapper{
+    position: relative;
+    margin-top: 20%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 @media screen and (min-width: 1200px) {
