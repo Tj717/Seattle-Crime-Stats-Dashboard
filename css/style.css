@@ -107,7 +107,7 @@ body {
 #container6 {
     margin-left: 3px;
     position: relative;
-    height: 7.5vw;
+    height: 20%;
     min-height: 35px;
     max-height: 355px;
     width: 100%;
@@ -266,7 +266,7 @@ img {
 }
 
 #container6 div {
-    margin-top: 1.5vw;
+    margin-top: 13%;
     margin-left: 1vw;
     position: relative;
     width: 100%;
