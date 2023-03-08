@@ -106,20 +106,19 @@ body {
 
 #container6 {
     margin-left: 3px;
-    /* height: 10%; */
-
     position: relative;
-    height: 25%;
+    height: 7.5vw;
     min-height: 35px;
     max-height: 355px;
     width: 100%;
     max-width: 270px;
     background-color: rgb(174, 243, 174);
-    display: flex;
+    display: inline-block;
     padding: 10%;
     outline: auto;
-    align-items: flex-start;
-    justify-content:space-between;
+    /* align-items: flex-start; */
+    /* justify-content:space-between; */
+    vertical-align: middle;
 }
 
 #crimeAgainst {
@@ -141,10 +140,16 @@ input[type="radio"] {
 .containerTexts {
     font-size: 1vw;
     margin-left: 5%;
+    color: #5a2f06;
+    font-weight: bold;
 }
 
 #container5 .containerTexts, #container6 .containerTexts{
     position: absolute;
+}
+
+#container6 .containerTexts {
+    top: 1;
 }
 
 #container5 .containerTexts {
@@ -258,4 +263,13 @@ button {
 img {
     width: 100%;
     height: 100%;
+}
+
+#container6 div {
+    margin-top: 1.5vw;
+    margin-left: 1vw;
+    position: relative;
+    width: 100%;
+    height: 0.5vw;
+    font-size: 1vw;
 }

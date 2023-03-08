@@ -42,6 +42,7 @@ income.addEventListener('click', function() {
 
 let year;
 let prev_year = 0;
+let total_row = 0;
 
 const year_menu = document.getElementById('dropdown');
 // year_menu.selectedIndex = -1;
@@ -55,26 +56,26 @@ year_menu.addEventListener('change', function() {
         // let geojsonSource = map.getSource(`crime${year}`);
         if (prev_year > 2017) {
             removeLayer(prev_year);
-            // geojsonSource.setData(`assets/crime_by_year/${year}.geojson`);
         }
-        prev_year = year;
-        // map.setLayoutProperty('crime2018-heat', 'visibility', 'visible');
-
-        addData(year)
-        .then(() => {addLayerHeat(year)})
-        .then(() => {addLayerPoint(year)})
         let pie = document.getElementById('chart_wrapper');
-        let chart = document.querySelector('.plot-container plotly');
+
         if(pie.classList.contains('active')) {
             pie.removeChild(pie.lastChild);
         }
+
         addPieChart();
+        addStats()
+
+        prev_year = year;
+        addData(year)
+        .then(() => {addLayerHeat(year)})
+        .then(() => {addLayerPoint(year)})
     }
 });
+
 window.addEventListener('resize', function() {
-    // this.alert("Window resized");
     let pie = document.getElementById('chart_wrapper');
-    let chart = document.querySelector('.plot-container plotly');
+    // let chart = document.querySelector('.plot-container plotly');
     if(pie.classList.contains('active')) {
         pie.removeChild(pie.lastChild);
     }
@@ -122,7 +123,7 @@ async function addData(year) {
     let url = "https://media.githubusercontent.com/media/Tj717/Seattle-Crime-Stats-Dashboard/main/assets/crimes_by_year/" + year + ".geojson";
     let response = await fetch(url);
     let crime = await response.json();
-
+    total_row = Object.keys(crime['features']).length;
     if (document.querySelector('input[name="question"]:checked')) {
         crime = filterJson(crime, document.querySelector('input[name="question"]:checked').value);
     }
@@ -218,9 +219,9 @@ function addLayerHeat(year) {
             'heatmap-intensity': {
                 'stops': [
                     [5, 1],
-                    [8, 2],
+                    [8, 1],
                     [11, 3],
-                    [15, 4]
+                    [15, 5]
                 ]
             },
             // assign color values be applied to points depending on their density
@@ -243,9 +244,9 @@ function addLayerHeat(year) {
             'heatmap-radius': {
                 'stops': [
                     [5, 1],
-                    [8, 2],
-                    [11, 3],
-                    [15, 4]
+                    [8, 1],
+                    [11, 2],
+                    [15, 3]
                 ]
             },
             // decrease opacity to transition into the circle layer
@@ -309,10 +310,21 @@ function addLayerPoint(year) {
     );
 }
 
-// TODO:
-// 1. Add a Income Map
-        // Use flyto when map is selected
-// 3. Add Crime Stats
-        // queryRenderedFeatures()
-        // Or total records in the geojson
-// 4. Add a Title
+function addStats() {
+    let data = ["72,446", "67,482", "71,776", "66,352", "69,165", "9,067"];
+    let curr_stats = document.getElementById('year_curr');
+    let prev_stats = document.getElementById('year_prev');
+    let next_stats = document.getElementById('year_next');
+    let index = year - 2018;
+    if (year == 2023) {
+        prev_stats.innerHTML = "Previous Year Total Records: " + data[index + 1];
+        next_stats.innerHTML = "";
+    } else if (year == 2018) {
+        next_stats.innerHTML = "Next Year Total Records: " + data[index + 1];
+        prev_stats.innerHTML = "";
+    } else {
+        prev_stats.innerHTML = "Previous Year Total Records: " + data[index - 1];
+        next_stats.innerHTML = "Next Year Total Records: " + data[index + 1];
+    }
+    curr_stats.innerHTML = "Current Year Total Records: " + data[index];
+}
