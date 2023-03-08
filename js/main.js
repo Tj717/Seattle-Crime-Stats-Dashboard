@@ -17,7 +17,7 @@ const title = document.getElementById('container1');
 income.addEventListener('click', function() {
     if (!toggle) {
         map.flyTo({
-                center: [-122.08, 47.599],
+                center: [-122.10, 47.589],
                 zoom: 10.4,
                 essential: false
                 });
