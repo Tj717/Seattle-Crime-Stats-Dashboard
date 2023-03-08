@@ -317,12 +317,15 @@ function addStats() {
     let next_stats = document.getElementById('year_next');
     let index = year - 2018;
     if (year == 2023) {
-        prev_stats.innerHTML = "Previous Year Total Records: " + data[index + 1];
+        prev_stats.style.display = "block";
+        prev_stats.innerHTML = "Previous Year Total Records: " + data[index - 1];
         next_stats.innerHTML = "";
     } else if (year == 2018) {
         next_stats.innerHTML = "Next Year Total Records: " + data[index + 1];
         prev_stats.innerHTML = "";
+        prev_stats.style.display = "none";
     } else {
+        prev_stats.style.display = "block";
         prev_stats.innerHTML = "Previous Year Total Records: " + data[index - 1];
         next_stats.innerHTML = "Next Year Total Records: " + data[index + 1];
     }
