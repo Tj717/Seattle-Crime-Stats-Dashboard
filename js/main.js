@@ -11,15 +11,19 @@ const map = new mapboxgl.Map({
 
 let toggle = false;
 const income = document.getElementById('income');
+const income_map = document.getElementById('income_map');
 const container4 = document.getElementById('container4');
+const title = document.getElementById('container1');
 income.addEventListener('click', function() {
     if (!toggle) {
         map.flyTo({
-                center: [-122.05, 47.63],
+                center: [-122.08, 47.599],
                 zoom: 10.4,
                 essential: false
                 });
         toggle = true;
+        income_map.style.display = "block";
+        title.style.display = "none";
         income.classList.add('active');
         income.textContent = 'On';
     } else {
@@ -29,6 +33,8 @@ income.addEventListener('click', function() {
             essential: false
         });
         toggle = false;
+        income_map.style.display = "none";
+        title.style.display = "flex";
         income.classList.remove('active');
         income.textContent = 'Off';
     }

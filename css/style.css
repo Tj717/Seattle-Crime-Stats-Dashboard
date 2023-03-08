@@ -243,3 +243,19 @@ button {
     background-color: #a053ff;
     color: #ffffff;
 }
+
+#income_map {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-right: 20%;
+    margin-left: 42%;
+    width: 38%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
