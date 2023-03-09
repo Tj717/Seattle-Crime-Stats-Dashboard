@@ -14,8 +14,10 @@
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
  #### Prototype drawing of the dashboard:
 <img src="img/prototype.jpg" alt="Map prototype" width="800" height="550">
+
  #### Heat map of crime records filtered by year:
 <img src="img/year_map.png"  width="800" height="400">
+
  #### Treemap:
 <img src="img/treemap_example.png">
 
