@@ -21,7 +21,9 @@
  #### Pie Chart of Crime Records by Category:
 <img src="img/pie.png">
 
-Treemap example of what we'll have on the sidebar of the dashboard. As years change. The treemap will also change and show the frequencies of crime categories by year to display any change the frequencies of these crimes might go through.
+Pie chart example of what we'll have on the sidebar of the dashboard. As years change. The chart will also change and show the distribution of crime categories by year and add additional information to what is presented in the heat map.
+
+ #### Choropleth map of median income by neighborhood:
 
 ## 6. Project format: Smart dashboard
   #### map projection, map zoom levels, center:
