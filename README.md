@@ -12,11 +12,11 @@
  - The data helps a variety of people. The data briefly introduce the different neighborhoods in Seattle and locations of the crime reported. This information helps people currently living in or planning to live in Seattle. The statement also helps the police force overlook which area/period should be more police patrolling. Finally, the info stretches to policymakers. For instance, this is a reference to identify potential problems and biases in existing policies regarding government regulations.
  
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
- - Prototype drawing of the dashboard:
+ ### Prototype drawing of the dashboard:
 <img src="img/prototype.jpg" alt="Map prototype" width="800" height="550">
- - Heat map of crime records filtered by year
+ ### Heat map of crime records filtered by year
 <img src="img/year_map.png"  width="800" height="400">
- - Treemap
+ ### Treemap
 <img src="img/treemap_example.png">
 
 Treemap example of what we'll have on the sidebar of the dashboard. As years change. The treemap will also change and show the frequencies of crime categories by year to display any change the frequencies of these crimes might go through.
