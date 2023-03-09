@@ -198,20 +198,26 @@ select {
     flex-direction: column;
 }
 
-#disclaimer {
-    width: 5%;
+#disclaimer, #main {
+    position: relative;
+    width: 6vw;
     color: white;
     opacity: 80%;
-    margin-left: 2%;
+    margin-left: 3vw;
     font-size: 0.6vw;
-    /* background-color: brown; */
     text-align: center;
 }
 
 button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: rgb(164, 70, 16);
+    background-color: rgb(255, 114, 33);
     color: white;
+    font-size: 0.8vw;
+}
+
+#go_main {
+    background-color: rgb(209, 255, 23);
+    color: rgb(0, 0, 0);
 }
 
 #overlay {
@@ -288,3 +294,15 @@ img {
     font-size: 1vw;
     display: block;
 }
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.5vw;
+}
+
+button:hover, #go_main:hover {
+    background-color: rgb(3, 255, 74);
+    color: rgb(0, 0, 0);
+}
+

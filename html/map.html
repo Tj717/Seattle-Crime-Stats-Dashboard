@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seattle Crime Statistics</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+        <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="container1">
+            <h2 id="titleText"><strong>City of Seattle Crime Statistics</strong></h2>
+        </div>
+        <div id="buttons">
+            <a href="index.html" id="main">
+                <button id="go_main">Main Page</button>
+            </a>
+            <div id="disclaimer">
+                <button onclick="on()">Disclaimer</button>
+            </div>
+        </div>
+        <div id="overlay" onclick="off()">
+            <div id="text">
+                <p style="color:rgb(255, 136, 0); text-align: center;"><mark>Disclaimer: </mark></p>
+                <p><mark>Data is collected from the Seattle Open Data Portal (SPD). This site will 
+                allow users to view data from 2018 to 2023. In addition, users can customize how 
+                the data is presented, from year, income and crime type. The data SPD relied on 
+                the National Incident-Based Reporting System for the data.</mark></p> 
+                Click Anywhere to Go Back.</div>
+        </div>
+        <script>
+            function on() {document.getElementById("overlay").style.display = "block";}
+            function off() {document.getElementById("overlay").style.display = "none";}
+        </script>
+        <div id="income_map">
+            <img src="../img/IncomeMap.png" alt="Income Map" >
+        </div>
+        <div id="sidepanel">
+            <div id="container2">
+                <label for="year" class="containerTexts">Choose a Year:</label>
+                    <select name="year" id="dropdown">
+                        <option value=0>-----</option>
+                        <option value=2018>2018</option>
+                        <option value=2019>2019</option>
+                        <option value=2020>2020</option>
+                        <option value=2021>2021</option>
+                        <option value=2022>2022</option>
+                        <option value=2023>2023</option>
+                    </select>
+            </div>
+            <div id="container3">
+                <p class="containerTexts">Crime Against: </p>
+                <form id="crimeAgainst">
+                    <label class="type"><input type="radio" value="SOCIETY" name="question">Society</label>
+                    <label class="type"><input type="radio" value="PROPERTY" name="question">Property</label>
+                    <label class="type"><input type="radio" value="PERSON" name="question">Person</label>
+                </form>
+            </div>
+            <div id="container4">
+                <a class="containerTexts" >Medium Income Map: </a>
+                <a id="income" style="margin-left: 5%;">Off</a>
+            </div>
+            <div id="container5">
+                <a class="containerTexts">Crime Type Pie Chart: </a>
+                <div id="chart_wrapper"></div>
+            </div>
+            <div id="container6">
+                <a class="containerTexts">Crime Statistics: </a>
+                <div id="year_prev"></div>
+                <div id="year_curr"></div>
+                <p><mark> Seattle crime rate graduatiuly increase over the year. The number of incidents
+                    would increase about 30 each time. </mark></p> 
+                <div id="year_next"></div>
+            </div>
+        </div>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
