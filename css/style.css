@@ -94,11 +94,11 @@ body {
     max-height: 550px;
     position: relative;
     width: 100%;
-    max-width: 318px;
+    max-width: 270px;
     background-color: rgb(174, 243, 230);
     display: flex;
     /*align-items: center;*/
-    padding: 3%;
+    padding: 10%;
     outline: auto;
     align-items: flex-start;
     justify-content:space-between;

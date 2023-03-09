@@ -52,8 +52,6 @@ year_menu.addEventListener('change', function() {
     form = document.getElementById('crimeAgainst');
     form.reset();
     if (year != 0) {
-        // hideLayers();
-        // let geojsonSource = map.getSource(`crime${year}`);
         if (prev_year > 2017) {
             removeLayer(prev_year);
         }
