@@ -41,8 +41,11 @@ Pie chart example of what we'll have on the sidebar of the dashboard. As years c
   - a dropdown menu for selecting the year
   - a multiple-choice field for selecting the crime type
   - an option to income a map of median income by neighborhood at the corner
-  - a treemap of crime distribution
+  - a pie chart of crime distribution
   - a statistics table for a summary of crimes on the map
   #### What are the coordinated charts you plan to make?
- - Treemap using D3.js's treemap function, visualizing types of crimes and their percentages.
+ - Pie Chart using Plotly's pie chart function, visualizing types of crimes and their percentages.
  - Statistics table using basic data querying showing the selected year, the previous year, and the next year's total crime records in a certain category to show a year-to-year comparison.
+
+>[Link](https://tj717.github.io/Seattle-Crime-Stats-Dashboard/) to access the dashboard.
+
