@@ -87,6 +87,11 @@ body {
     outline: auto;
 }
 
+h3 {
+    margin-top: 0;
+    font-size: 1vw;
+}
+
 #container5 {
     margin-left: 3px;
     height: 50%;
@@ -184,16 +189,16 @@ select {
 }
 
 #container1 {
-    width: 30%;
+    width: 25%;
     /* height: 30%; */
-    height: 80px;
+    height: 90px;
     opacity: 95%;
     background-color: rgba(2, 2, 2, 0.621);
-    margin: 10px;
-    font-size: 1.3vw;
+    /* margin-top: 5px; */
+    font-size: 1vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: rgb(254, 254, 254);
     flex-direction: column;
 }
@@ -305,4 +310,3 @@ button:hover, #go_main:hover {
     background-color: rgb(3, 255, 74);
     color: rgb(0, 0, 0);
 }
-
