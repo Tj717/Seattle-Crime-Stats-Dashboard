@@ -3,17 +3,14 @@
 >[Link](https://tj717.github.io/Seattle-Crime-Stats-Dashboard/) to access the dashboard.
 
 ## 1. Project idea
- - to map and give an overview of crime rates and different types of crime within the city of Seattle. It will provide a comprehensive view of police response coverage and the trend of criminal activities. This project aims to be a one-for-all infographic site that includes different customization options, allowing users to have the most control over seeing what kind of information they need and looking for. 
+ - The project showcases an overview of crime rates and different types of crime within Seattle. In addition, it will provide a comprehensive view of police response coverage and the trend of criminal activities. This project aims to be a one-for-all infographic site that includes different customization options. The site gives users control over seeing what information they need and is looking for through interactive features. 
 ## 2. Project significance and broader impacts
-- this project could lead to an echo chamber effect where the past data reinforces people's existing perception of the situation and makes the situation worse. One way to go around it is to explicitly disclaim the source of the data and what exactly they show us other than records of crime reports, specifically the implications behind each crime category and their effect on people's daily lives.
+- The data within this project could lead to an echo chamber effect where the past data reinforces people's existing perceptions of the situation. One way to go around it is to disclaim the source of the data explicitly. Further, it could also show us records of crime reports, specifically the implications behind each crime category and their effect on people's daily lives.
 ## 3. Primary functions and major data sources
- - the primary function of the map is to generate and query different statistics from the dataset, such as crime records in the year 2015, or the crimes against society. The major data source is Seattle Open Data Portal's crime records dataset.
+ - The primary function of the map is to generate and query different statistics from the dataset, such as crime records in 2015 or crimes against society. The primary data source is Seattle Open Data Portal's crime records dataset.
 ## 4. Targeted audience
- - people who live in or plan to live in Seattle: provide a brief introduction to the different neighborhoods in Seattle along with locations of the crime reports that people should be aware of.
-
- - the police force: a quick overlook of which area/time period should be more police patrolling taking place.
-
- - policymakers: use this as a reference to identify potential problems and biases in existing policies when it comes to government regulations.
+ - The data helps a variety of people. The data briefly introduce the different neighborhoods in Seattle and locations of the crime reported. This information helps people currently living in or planning to live in Seattle. The statement also helps the police force overlook which area/period should be more police patrolling. Finally, the info stretches to policymakers. For instance, this is a reference to identify potential problems and biases in existing policies regarding government regulations.
+ 
 ## 5. Multimedia (e.g., external links, texts, images, youtube videos, etc.)
  - Prototype drawing of the dashboard:
 <img src="img/prototype.jpg" alt="Map prototype" width="800" height="550">
