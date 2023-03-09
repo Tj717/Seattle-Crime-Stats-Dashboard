@@ -19,7 +19,7 @@
  - Treemap
 <img src="img/treemap_example.png">
 
-Treemap example of what we'll have on the sidebar of the dashboard. As years change. the treemap will change as well and show the frequencies of crime categories by year to display any sort of change the frequencies of these crimes might go through.
+Treemap example of what we'll have on the sidebar of the dashboard. As years change. The treemap will also change and show the frequencies of crime categories by year to display any change the frequencies of these crimes might go through.
 
 ## 6. Project format: Smart dashboard
   #### map projection, map zoom levels, center:
