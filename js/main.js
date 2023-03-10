@@ -45,7 +45,6 @@ let prev_year = 0;
 let total_row = 0;
 
 const year_menu = document.getElementById('dropdown');
-// year_menu.selectedIndex = -1;
 year_menu.addEventListener('change', function() {
     // let year = parseInt(year_menu.value);
     year = parseInt(year_menu.value);
