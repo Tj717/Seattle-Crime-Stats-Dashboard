@@ -30,7 +30,6 @@ window.addEventListener('resize', function() {
 });
 
 year_menu.addEventListener('change', function() {
-    // let year = parseInt(year_menu.value);
     year = parseInt(year_menu.value);
     form = document.getElementById('crimeAgainst');
     form.reset();
