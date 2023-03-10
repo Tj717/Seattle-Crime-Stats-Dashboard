@@ -23,7 +23,6 @@ const container4 = document.getElementById('container4');
 
 window.addEventListener('resize', function() {
     let pie = document.getElementById('chart_wrapper');
-    // let chart = document.querySelector('.plot-container plotly');
     if(pie.classList.contains('active')) {
         pie.removeChild(pie.lastChild);
     }
