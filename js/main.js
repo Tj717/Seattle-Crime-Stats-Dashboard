@@ -9,11 +9,59 @@ const map = new mapboxgl.Map({
     scrollZoom: true,
 });
 
+let year;
+let prev_year = 0;
+let total_row = 0;
 let toggle = false;
+
+const title = document.getElementById('container1');
+const year_menu = document.getElementById('dropdown');
+const crimeAgainst = document.getElementById('crimeAgainst');
 const income = document.getElementById('income');
 const income_map = document.getElementById('income_map');
 const container4 = document.getElementById('container4');
-const title = document.getElementById('container1');
+
+window.addEventListener('resize', function() {
+    let pie = document.getElementById('chart_wrapper');
+    // let chart = document.querySelector('.plot-container plotly');
+    if(pie.classList.contains('active')) {
+        pie.removeChild(pie.lastChild);
+    }
+    addPieChart();
+});
+
+year_menu.addEventListener('change', function() {
+    // let year = parseInt(year_menu.value);
+    year = parseInt(year_menu.value);
+    form = document.getElementById('crimeAgainst');
+    form.reset();
+    if (year != 0) {
+        if (prev_year > 2017) {
+            removeLayer(prev_year);
+        }
+        let pie = document.getElementById('chart_wrapper');
+
+        if(pie.classList.contains('active')) {
+            pie.removeChild(pie.lastChild);
+        }
+
+        addPieChart();
+        addStats()
+
+        prev_year = year;
+        addData()
+        .then(() => {addLayerHeat()})
+        .then(() => {addLayerPoint()})
+    }
+});
+
+crimeAgainst.addEventListener("change", function() {
+    removeLayer(prev_year);
+    addData()
+    .then(() => {addLayerHeat()})
+    .then(() => {addLayerPoint()});
+});
+
 income.addEventListener('click', function() {
     if (!toggle) {
         map.flyTo({
@@ -40,58 +88,22 @@ income.addEventListener('click', function() {
     }
 });
 
-let year;
-let prev_year = 0;
-let total_row = 0;
+async function addData() {
+    // Load data from local file
+    // let response = await fetch(`assets/crimes_by_year/${year}.geojson`);
 
-const year_menu = document.getElementById('dropdown');
-year_menu.addEventListener('change', function() {
-    // let year = parseInt(year_menu.value);
-    year = parseInt(year_menu.value);
-    form = document.getElementById('crimeAgainst');
-    form.reset();
-    if (year != 0) {
-        if (prev_year > 2017) {
-            removeLayer(prev_year);
-        }
-        let pie = document.getElementById('chart_wrapper');
-
-        if(pie.classList.contains('active')) {
-            pie.removeChild(pie.lastChild);
-        }
-
-        addPieChart();
-        addStats()
-
-        prev_year = year;
-        addData(year)
-        .then(() => {addLayerHeat(year)})
-        .then(() => {addLayerPoint(year)})
+    // Load data from Github repo
+    let url = "https://media.githubusercontent.com/media/Tj717/Seattle-Crime-Stats-Dashboard/main/assets/crimes_by_year/" + year + ".geojson";
+    let response = await fetch(url);
+    let crime = await response.json();
+    total_row = Object.keys(crime['features']).length;
+    if (document.querySelector('input[name="question"]:checked')) {
+        crime = filterJson(crime, document.querySelector('input[name="question"]:checked').value);
     }
-});
-
-window.addEventListener('resize', function() {
-    let pie = document.getElementById('chart_wrapper');
-    // let chart = document.querySelector('.plot-container plotly');
-    if(pie.classList.contains('active')) {
-        pie.removeChild(pie.lastChild);
-    }
-    addPieChart();
-});
-
-
-const crimeAgainst = document.getElementById('crimeAgainst');
-crimeAgainst.addEventListener("change", function() {
-    removeLayer(prev_year);
-    addData(year)
-    .then(() => {addLayerHeat(year)})
-    .then(() => {addLayerPoint(year)});
-});
-
-function removeLayer(year) {
-    map.removeLayer(`crime${year}-heat`);
-    map.removeLayer(`crime${year}-point`);
-    map.removeSource(`crime${year}`);
+    map.addSource(`crime${year}`, {
+        type: 'geojson',
+        data: crime
+    });
 }
 
 function filterJson (data, keyWord) {
@@ -112,22 +124,10 @@ function filterJson (data, keyWord) {
     return output
 }
 
-async function addData(year) {
-    // Load data from local file
-    // let response = await fetch(`assets/crimes_by_year/${year}.geojson`);
-
-    // Load data from Github repo
-    let url = "https://media.githubusercontent.com/media/Tj717/Seattle-Crime-Stats-Dashboard/main/assets/crimes_by_year/" + year + ".geojson";
-    let response = await fetch(url);
-    let crime = await response.json();
-    total_row = Object.keys(crime['features']).length;
-    if (document.querySelector('input[name="question"]:checked')) {
-        crime = filterJson(crime, document.querySelector('input[name="question"]:checked').value);
-    }
-    map.addSource(`crime${year}`, {
-        type: 'geojson',
-        data: crime
-    });
+function removeLayer() {
+    map.removeLayer(`crime${year}-heat`);
+    map.removeLayer(`crime${year}-point`);
+    map.removeSource(`crime${year}`);
 }
 
 function addPieChart() {
@@ -187,14 +187,12 @@ function addPieChart() {
         autosize: true
     };
 
-    // console.log("debug:" + year);
-    // console.log("debug:" + eval(`data${year}`));
     let pie = document.getElementById('chart_wrapper');
     Plotly.newPlot(pie, eval(`data${year}`), layout, config);
     pie.classList.add('active');
 }
 
-function addLayerHeat(year) {
+function addLayerHeat() {
     map.addLayer(
         {
         'id': `crime${year}-heat`,
@@ -260,7 +258,7 @@ function addLayerHeat(year) {
     );
 }
 
-function addLayerPoint(year) {
+function addLayerPoint() {
     map.addLayer(
         {
         'id': `crime${year}-point`,
