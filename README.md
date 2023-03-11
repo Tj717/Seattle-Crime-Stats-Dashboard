@@ -7,7 +7,7 @@
 ## 2. Project significance and broader impacts
 - The data within this project could lead to an echo chamber effect where the past data reinforces people's existing perceptions of the situation. One way to go around it is to disclaim the source of the data explicitly. Further, it could also show us records of crime reports, specifically the implications behind each crime category and their effect on people's daily lives.
 ## 3. Primary functions and major data sources
- - The primary function of the map is to generate and query different statistics from the dataset, such as crime records in 2015 or crimes against society. The primary data source is Seattle Open Data Portal's crime records dataset.
+ - The primary function of the map is to generate and query different statistics from the dataset, such as crime records in 2019 or crimes against society. The primary data source is Seattle Open Data Portal's crime records dataset.
 ## 4. Targeted audience
  - The data helps a variety of people. The data briefly introduce the different neighborhoods in Seattle and locations of the crime reported. This information helps people currently living in or planning to live in Seattle. The statement also helps the police force overlook which area/period should be more police patrolling. Finally, the info stretches to policymakers. For instance, this is a reference to identify potential problems and biases in existing policies regarding government regulations.
  
