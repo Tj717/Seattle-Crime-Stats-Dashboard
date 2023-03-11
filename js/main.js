@@ -35,7 +35,7 @@ year_menu.addEventListener('change', function() {
     form.reset();
     if (year != 0) {
         if (prev_year > 2017) {
-            removeLayer(prev_year);
+            removeAllCustomLayer();
         }
         let pie = document.getElementById('chart_wrapper');
 
@@ -54,7 +54,7 @@ year_menu.addEventListener('change', function() {
 });
 
 crimeAgainst.addEventListener("change", function() {
-    removeLayer(prev_year);
+    removeAllCustomLayer();
     addData()
     .then(() => {addLayerHeat()})
     .then(() => {addLayerPoint()});
@@ -122,10 +122,12 @@ function filterJson (data, keyWord) {
     return output
 }
 
-function removeLayer() {
-    map.removeLayer(`crime${year}-heat`);
-    map.removeLayer(`crime${year}-point`);
-    map.removeSource(`crime${year}`);
+function removeAllCustomLayer() {
+    for (let i = 2018; i < 2024; i++) {
+        if (map.getLayer(`crime${i}-heat`)) map.removeLayer(`crime${i}-heat`);
+        if (map.getLayer(`crime${i}-point`)) map.removeLayer(`crime${i}-point`);
+        if (map.getSource(`crime${i}`)) map.removeSource(`crime${i}`);
+    }
 }
 
 function addPieChart() {
