@@ -44,10 +44,8 @@ body {
 #container2 {
     margin-left: 3px;
     height: 5%;
-    width: 100%;
-    max-width: 270px;
+    width: 99%;
     min-height: 2px;
-    max-height: 5px;
     position: relative;
     margin-top: 3px;
     background-color: rgb(182, 182, 254);
@@ -63,8 +61,7 @@ body {
     min-height: 5px;
     max-height: 15px;
     position: relative;
-    width: 100%;
-    max-width: 270px;
+    width: 99%;
     background-color: rgb(174, 205, 243);
     display: flex;
     align-items: center;
@@ -76,14 +73,12 @@ body {
     margin-left: 3px;
     height: 3%;
     min-height: 5px;
-    max-height: 10px;
     position: relative;
-    width: 100%;
-    max-width: 270px;
+    width: 99%;
     background-color: rgb(174, 228, 243);
     display: flex;
     align-items: center;
-    padding: 10%;
+    padding: 5%;
     outline: auto;
 }
 
@@ -98,11 +93,9 @@ h3 {
     min-height: 150px;
     max-height: 550px;
     position: relative;
-    width: 100%;
-    max-width: 270px;
+    width: 99%;
     background-color: rgb(174, 243, 230);
     display: flex;
-    /*align-items: center;*/
     padding: 5%;
     outline: auto;
     align-items: flex-start;
@@ -116,7 +109,6 @@ h3 {
     min-height: 35px;
     max-height: 355px;
     width: 100%;
-    max-width: 270px;
     background-color: rgb(174, 243, 174);
     display: inline-block;
     padding: 10%;
@@ -191,7 +183,7 @@ select {
 #container1 {
     width: 25%;
     /* height: 30%; */
-    height: 90px;
+    height: 15%;
     opacity: 95%;
     background-color: rgba(2, 2, 2, 0.621);
     /* margin-top: 5px; */
@@ -218,6 +210,12 @@ button {
     background-color: rgb(255, 114, 33);
     color: white;
     font-size: 0.8vw;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 10%;
+    height: 10%;
 }
 
 #go_main {
@@ -291,7 +289,7 @@ img {
 }
 
 #container6 div {
-    margin-top: 13%;
+    margin-top: 10%;
     margin-left: 1vw;
     position: relative;
     width: 100%;
